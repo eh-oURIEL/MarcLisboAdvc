@@ -1,0 +1,8 @@
+.card{
+    background-color: rgb(245, 245, 245);
+    margin-top: 25px;
+}
+
+.card:hover{
+    background-color: rgb(245, 230, 230);
+}

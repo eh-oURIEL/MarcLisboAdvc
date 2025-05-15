@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="https://kit.fontawesome.com/2a1053f0dc.js" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/png" href="img/imgLogo/logoRodape.png">
+
+
+        <link rel="stylesheet" href="styless.css">        
+        <title>Marciano Lisboa - Advocacia</title>
+      </head>
+      <body class="bg-pink-25 text-[#191b30]">
+        <div class="flex justify-center md:justify-between p-3 bg-[#191b30] text-white text-sm">
+          <div class="flex items-center md:mx-10">
+              <a href="tel:+5561998321750">
+                <i class="fa-solid fa-phone mx-2"></i>
+                (61) 9 9832-1740</a>
+          </div>
+          <div class="hidden md:flex items-center mx-10">
+              <a href="mailto:contato@marcianolisboaadvocacia.com.br">
+                <i class="fa-solid fa-envelope mx-2"></i>
+                contato@marcianolisboaadvocacia.com.br
+              </a>
+          </div>
+        </div>
+        <header class="bg-[#780909] p-2">
+          <div class="flex items-center justify-between"> 
+              <img src="img/imgLogo/LogoMLAdvc.png" alt="" class="w-[150px] h-[150px] object-contain">
+              <!-- Botão hamburguer -->
+              <button id="menu-btn" class="text-white md:hidden mr-5">
+                  <i class="fas fa-bars text-2xl"></i>
+              </button>
+              <!-- Navegação normal em telas médias+ -->
+              <nav class="hidden md:flex items-center space-x-8 mr-5 p-5">
+                <a href="https://wa.me/5561998321740?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20entrar%20em%20contato%20para%20saber%20mais%20sobre%20os%20servi%C3%A7os%20jur%C3%ADdicos%20oferecidos.%20Poderiam%20me%20orientar%20sobre%20como%20proceder%3F">
+                  <button class="flex items-center space-x-2 text-white border border-white rounded-full px-4 py-2 hover:bg-white hover:text-[#780909] transition duration-500">
+                      <i class="fa-brands fa-whatsapp"></i>
+                      <p>Fale Conosco</p>
+                  </button>
+              </a>
+              <a href="https://www.instagram.com/marcianolisboaadvocacia/" target="_blank">
+                <button class="flex items-center space-x-2 text-white border border-white rounded-full px-4 py-2 hover:bg-white hover:text-[#780909] transition duration-500">
+                    <i class="fa-brands fa-instagram"></i>
+                    <p>Instagram</p>
+                </button>
+            </a>
+                  <a href="#avaliacoes" class="text-white">Avaliações</a>
+                  <a href="#sobre" class="text-white">Sobre</a>
+                  <a href="#atuacao" class="text-white">Atuação</a>
+              </nav>
+          </div>
+      
+          <!-- Menu mobile -->
+          <nav id="mobile-menu" class="hidden flex-col space-y-2 mt-4 md:hidden transition duration-1500 p-5">
+              <a href="#avaliacoes" class="text-white block">Avaliações</a>
+              <a href="#sobre" class="text-white block">Sobre</a>
+              <a href="#atuacao" class="text-white block">Atuação</a>
+              <a href="https://wa.me/5561998321740?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20entrar%20em%20contato%20para%20saber%20mais%20sobre%20os%20servi%C3%A7os%20jur%C3%ADdicos%20oferecidos.%20Poderiam%20me%20orientar%20sobre%20como%20proceder%3F" class="text-white block">
+                  <button class="flex items-center space-x-2 text-white">
+                      <i class="fa-brands fa-whatsapp py-3"></i>
+                      <p>Whatsapp</p>
+                  </button>
+              </a>
+              <a href="https://www.instagram.com/marcianolisboaadvocacia/" target="_blank" class="text-white block">
+                <button class="flex items-center space-x-2 text-white">
+                    <i class="fa-brands fa-instagram"></i>
+                    <p>Instagram</p>
+                </button>
+            </a>
+          </nav>
+      </header>
+        <main>
+
+          <section id="banner" class="relative h-screen w-full bg-cover bg-center bg-no-repeat" style="background-image: url('img/imgBanner/img_banner.jpeg');">
+            <!-- Overlay escuro -->
+            <div class="absolute inset-0 bg-[rgba(0,0,0,0.6)]"></div>          
+            <!-- Conteúdo centralizado -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+              <h1 class="text-white text-3xl md:text-5xl font-semibold mb-10">
+                Mergulhamos em sua história, aplicamos nossa expertise<br class="hidden md:block">  e dedicamos nosso cuidado para construir a solução jurídica que você precisa
+              </h1>
+              <a href="https://wa.me/5561998321740?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20entrar%20em%20contato%20para%20saber%20mais%20sobre%20os%20servi%C3%A7os%20jur%C3%ADdicos%20oferecidos.%20Poderiam%20me%20orientar%20sobre%20como%20proceder%3F" class="bg-gradient-to-r from-red-700 to-red-900 font-semibold text-white px-6 py-3 rounded shadow-lg hover:from-red-600 hover:to-red-700 transition duration-500">
+                Entre em contato pelo Whatsapp
+              </a>
+            </div>
+          </section>
+
+          <section class="text-center my-20" id="atuacao">
+            <h1 class="text-3xl font-bold mb-8">Especializações</h1>
+            <div class="flex flex-wrap justify-between gap-4">
+                <div onclick="toggleCard(this)" class="card w-full sm:w-[45%] lg:w-[30%] rounded shadow-lg p-4 flex flex-col items-center justify-center mx-auto h-70 cursor-pointer transition duration-1000">
+                    <img src="img/imgCards/Civil_logo.png" alt="" class="w-20 h-20 mb-4 card-img">
+                    <p class="font-semibold card-title">Direito Civil</p>
+                    <p class="hidden card-desc text-center">Resolução de disputas civis, incluindo contratos, propriedade e mais.</p>
+                </div>
+                <div onclick="toggleCard(this)" class="card w-full sm:w-[45%] lg:w-[30%] rounded shadow-lg p-4 flex flex-col items-center justify-center mx-auto h-70 cursor-pointer transition duration-1000">
+                    <img src="img/imgCards/familia_logo.png" alt="" class="w-20 h-20 mb-4 card-img">
+                    <p class="font-semibold card-title">Direito de Família</p>
+                    <p class="hidden card-desc text-center">Divórcio, guarda de filhos, alimentos, inventário e mais.</p>
+                </div>
+                <div onclick="toggleCard(this)" class="card w-full sm:w-[45%] lg:w-[30%] rounded shadow-lg p-4 flex flex-col items-center justify-center mx-auto h-70 cursor-pointer transition duration-1000">
+                    <img src="img/imgCards/Criminal_logo.png" alt="" class="w-20 h-20 mb-4 card-img">
+                    <p class="font-semibold card-title">Direito Penal</p>
+                    <p class="hidden card-desc text-center">Defesa de acusados em processos criminais.</p>
+
+                </div>
+                <div onclick="toggleCard(this)" class="card w-full sm:w-[45%] lg:w-[30%] rounded shadow-lg p-4 flex flex-col items-center justify-center mx-auto h-70 cursor-pointer transition duration-1000">
+                    <img src="img/imgCards/consumidor_logo.png" alt="" class="w-20 h-20 mb-4 card-img">
+                    <p class="font-semibold card-title">Direito do Consumidor</p>
+                    <p class="hidden card-desc text-center">Defesa dos direitos dos consumidores em relação às empresas e fornecedores.</p>
+
+                </div>
+                <div onclick="toggleCard(this)" class="card w-full sm:w-[45%] lg:w-[30%] rounded shadow-lg p-4 flex flex-col items-center justify-center mx-auto h-70 cursor-pointer transition duration-1000">
+                    <img src="img/imgCards/bancario_logo.png" alt="" class="w-20 h-20 mb-4 card-img">
+                    <p class="font-semibold card-title">Direito Bancário</p>
+                    <p class="hidden card-desc text-center">Resolução de questões relacionadas aos bancos, instituições financeiras e fraudes bancárias.</p>
+                </div>
+            </div> 
+        </section>
+
+        <section class="relative bg-gradient-to-t from-[#780909] to-[#810b0b] py-12 text-center text-white shadow-[inset_0_-40px_30px_-20px_rgba(0,0,0,0.2)]" id="sobre">
+            <h1 class="text-3xl font-semibold mb-6">Quem somos</h1>
+            <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between">
+                <div class="w-full lg:w-1/3 flex  mb-8 lg:mb-0 ">
+                <img src="img/imgDireito/img_somos.png" alt="" class="w-100 h-auto">
+                </div>
+                <div class="w-full lg:w-2/3">
+                <div class="text-left">
+                  <p class="mb-4">
+                    No Marciano Lisboa Advocacia, nos dedicamos a oferecer soluções jurídicas personalizadas e de alta qualidade. 
+                  </p>
+                  <p class="mb-4">
+                    Nossa equipe experiente e dedicada empenha-se em compreender suas necessidades e resolver seus problemas com atenção e o devido cuidado.
+                  </p>
+                  <p class="mb-4">
+                    Atuando em diversas áreas do direito e contando com uma competente rede de parceiros, nosso escritório busca acordos eficazes e prioriza a eficiência, estando à disposição para defender seus direitos judicialmente, quando necessário.
+                  </p>
+                  <p class="mb-4">
+                   Nosso compromisso é com um atendimento cordial, especializado e humano,  guiando o cliente com conhecimento e zelo na busca pelas melhores soluções jurídicas. 
+                  </p>
+                  <p class="my-10">
+                  “Além do Direito, o cuidado que você merece.”
+                </p>   
+              </div>                          
+              <a href="https://wa.me/5561998321740?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20entrar%20em%20contato%20para%20saber%20mais%20sobre%20os%20servi%C3%A7os%20jur%C3%ADdicos%20oferecidos.%20Poderiam%20me%20orientar%20sobre%20como%20proceder%3F" class="bg-gradient-to-r from-red-100 to-red-200 font-semibold text-black px-10 py-3 rounded shadow-lg hover:from-red-200 hover:to-red-300 transition">
+                Mande sua mensagem
+              </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 text-center" id="fundadora">
+            <h1 class="text-3xl font-semibold mb-6">Fundadora</h1>
+            
+            <img src="img/imgPerfil/img_perfil.png" alt="Adriana Marciano Lisboa"
+                 class="w-55 h-55 lg:w-100 lg:h-100 rounded-full mx-auto mb-6 object-cover">
+            
+            <h1 class="text-xl font-medium mb-2">Adriana Marciano Lisboa</h1>
+            <p class="text-sm text-gray-700 mb-6">OAB-DF 69.110</p>
+            
+            <div class="flex justify-center space-x-6">
+              <a href="mailto:contato@marcianolisboaadvocacia.com.br?subject=Olá, tudo bem? Gostaria de entrar em contato para saber mais sobre os serviços jurídicos oferecidos. Poderiam me orientar sobre como proceder?" class="text-[#780909] text-2xl">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="https://www.instagram.com/marcianolisboaadvocacia/" class="text-[#780909] text-2xl">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </section>
+          
+          <section class="bg-[#780909] py-12 text-center text-white py-2" id="avaliacoes">
+             <h1 class="text-2xl my-10">Avaliações</h1>
+             <div class="flex flex-col md:flex-row justify-center items-center">
+                <div class="md:w-250 ">
+                <script defer async src='https://cdn.trustindex.io/loader.js?0079598467a9107d81362072028'></script>
+            </div>
+             </div>
+            
+           
+          </section>
+          
+          <!-- Divisória branca -->
+          <div class="w-full h-px bg-white"></div>
+          
+          <section id="formulario" class="bg-[#780909] text-white py-14 flex flex-col items-center">
+            <h1 class="text-3xl font-bold mb-4 text-white">Fale conosco</h1>
+            <p class="text-center max-w-md mb-6">
+              Estamos aqui para ouvir você! <br>
+              Compartilhe suas perguntas, dúvidas, comentários e sugestões. <br>
+              Sua opinião é fundamental para nós.
+            </p>
+            <form action="https://formsubmit.co/contato@marcianolisboaadvocacia.com.br" method="POST" class="w-full max-w-md space-y-4">
+              <input type="hidden" name="_subject" value="Nova mensagem do site!">
+              <input type="text" name="nome" placeholder="Nome" required class="w-full p-3 rounded-md border border-gray-300">
+              <input type="text" name="telefone" placeholder="DDD + Telefone" required class="w-full p-3 rounded-md border border-gray-300">
+              <input type="email" name="email" placeholder="E-mail" required class="w-full p-3 rounded-md border border-gray-300">
+              <input type="text" name="assunto" placeholder="Assunto" required class="w-full p-3 rounded-md border border-gray-300">
+              <textarea name="mensagem" placeholder="Mensagem" rows="4" required class="w-full p-3 rounded-md border border-gray-300"></textarea>
+              <button type="submit" class="w-full bg-gradient-to-r from-[#1a1f59] to-[#191b30] text-white p-3 rounded-md hover:bg-[#1f2235] transition">
+                Enviar mensagem
+              </button>
+            </form>
+            
+          </section>
+          
+          
+
+        </main>
+        <footer class="bg-white text-[#780909]">
+          <div class="flex flex-col lg:flex-row justify-between items-center px-6 py-8 max-w-6xl mx-auto">
+              <!-- Logo e nome -->
+              <div class="flex flex-col items-center lg:items-start mb-6 lg:mb-0">
+                  <img src="img/imgLogo/logoRodape.png" alt="Logo" class="w-50 h-auto mb-4">
+              </div>
+      
+              <!-- Linha vertical para separar no desktop -->
+              <div class="hidden lg:block h-40 w-px bg-[#780909] mx-8"></div>
+      
+              <!-- Informações -->
+              <div class="flex flex-col space-y-4">
+                  <a href="https://wa.me/5561998321740?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20entrar%20em%20contato%20para%20saber%20mais%20sobre%20os%20servi%C3%A7os%20jur%C3%ADdicos%20oferecidos.%20Poderiam%20me%20orientar%20sobre%20como%20proceder%3F" class="flex items-center space-x-2">
+                      <i class="fa-solid fa-mobile-screen-button"></i>
+                      <p>(61) 9 9832-1740</p>
+                  </a>
+                  <a href="mailto:contato@marcianolisboaadvocacia.com.br?subject=Olá, tudo bem? Gostaria de entrar em contato para saber mais sobre os serviços jurídicos oferecidos. Poderiam me orientar sobre como proceder?" class="flex items-center space-x-2">
+                      <i class="fa-solid fa-envelope"></i>
+                      <p>contato@marcianolisboaadvocacia.com.br</p>
+                  </a>
+                  <a href="https://www.instagram.com/marcianolisboaadvocacia/" class="flex items-center space-x-2">
+                      <i class="fa-brands fa-instagram"></i>
+                      <p>Marcianolisboaadvocacia</p>
+                  </a>
+                  <a href="https://maps.app.goo.gl/cVFQwt3W9vKN3YFt9" class="flex items-center space-x-2">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <p>Santa Maria-DF: QC 01, Conjunto N, Lote 08 Loja 01</p>
+                  </a>
+                  <a href="https://maps.app.goo.gl/NirJG6GaN31TzzJ5A" class="flex items-center space-x-2">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <p>Gama-DF: Quadra 01, Conjunto B, Lote 320, Setor Norte</p>
+                  </a>
+              </div>
+          </div>
+      
+          <!-- Faixa inferior -->
+          <div class="bg-[#780909] h-5 w-full text-center pt-5 pb-20 text-white text-sm">
+            <p  class="">Marciano Lisboa Advocacia © 2025 - Todos os direitos reservados</p>
+            <p class="mt-4">Desenvolvido por: <a href="https://www.instagram.com/uriel_dsz">Uriel de Souza</a></p>
+          </div>
+      </footer>
+      
+
+        <script src="script.js"></script>
+
+      </body>
+</html>
