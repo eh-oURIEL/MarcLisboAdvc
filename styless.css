@@ -6,3 +6,7 @@
 .card:hover{
     background-color: rgb(245, 230, 230);
 }
+
+a[href*="elfsight.com/google-reviews-widget"] {
+  display: none !important;
+}
