@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Blog</title>
+</head>
+<body>
+  <h1>Artigos</h1>
+  <ul id="lista"></ul>
+
+  <script>
+    fetch("artigos.json")
+      .then(r => r.json())
+      .then(data => {
+         const lista = document.getElementById("lista");
+         data.forEach(a => {
+           const li = document.createElement("li");
+           li.innerHTML = `<a href="${a.arquivo}">${a.titulo}</a>`;
+           lista.appendChild(li);
+         });
+      });
+  </script>
+</body>
+</html>
