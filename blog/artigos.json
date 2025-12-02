@@ -1,5 +1,10 @@
 [
   {
+    "titulo": "Artigo 3",
+    "data": "2025-12-02",
+    "arquivo": "artigo-3.html"
+  },
+  {
     "titulo": "como posso resolver um problema",
     "data": "2025-12-01",
     "arquivo": "como-posso-resolver-um-problema.html"
