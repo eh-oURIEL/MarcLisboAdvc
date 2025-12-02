@@ -3,5 +3,10 @@
     "titulo": "Teste artigo - 1",
     "data": "2025-12-02",
     "arquivo": "teste-artigo---1.html"
+  },
+  {
+    "titulo": "novo teste",
+    "data": "2025-12-02",
+    "arquivo": "novo-teste.html"
   }
 ]
