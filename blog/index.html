@@ -1,25 +1,69 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Blog</title>
+  <title>Blog - Artigos</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .card {
+      background-color: rgb(245, 245, 245);
+      margin-top: 25px;
+      transition: 0.3s;
+    }
+    .card:hover {
+      background-color: rgb(245, 230, 230);
+    }
+  </style>
 </head>
-<body>
-  <h1>Artigos</h1>
-  <ul id="lista"></ul>
+
+<body class="bg-gradient-to-t from-[#780909] to-[#810b0b] min-h-screen">
+
+  <!-- CONTAINER PRINCIPAL -->
+  <div class="max-w-4xl mx-auto mt-10 p-6 card rounded-lg shadow-lg">
+
+    <h1 class="text-3xl font-bold text-center mb-8 text-[#780909]">
+      Artigos Publicados
+    </h1>
+
+    <ul id="lista" class="space-y-4"></ul>
+
+  </div>
 
   <script>
     fetch("artigos.json")
       .then(r => r.json())
       .then(data => {
-         const lista = document.getElementById("lista");
-         data.forEach(a => {
-           const li = document.createElement("li");
-           li.innerHTML = `<a href="${a.arquivo}">${a.titulo}</a>`;
-           lista.appendChild(li);
-         });
+        const lista = document.getElementById("lista");
+
+        if (!data || data.length === 0) {
+          lista.innerHTML = `
+            <p class="text-center text-gray-600 text-lg">
+              Nenhum artigo foi publicado ainda.
+            </p>`;
+          return;
+        }
+
+        data.forEach(a => {
+          const li = document.createElement("li");
+
+          li.innerHTML = `
+            <div class="card rounded-lg shadow p-5">
+              <a href="${a.arquivo}" class="text-2xl font-semibold text-[#780909] hover:underline">
+                ${a.titulo}
+              </a>
+              <p class="text-gray-600 mt-1">
+                Publicado em: <span class="font-medium">${a.data}</span>
+              </p>
+            </div>
+          `;
+
+          lista.appendChild(li);
+        });
       });
   </script>
+
 </body>
 </html>
