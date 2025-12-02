@@ -31,12 +31,107 @@
   <!-- CONTAINER PRINCIPAL -->
   <main class="max-w-5xl mx-auto mt-10 p-4">
 
-    <h2 class="text-3xl font-bold text-center mb-8 text-white">
-      Últimos Artigos
-    </h2>
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog - Artigos</title>
 
-    <!-- GRID DE ARTIGOS -->
-    <div id="lista" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .card {
+      background-color: rgb(245, 245, 245);
+      margin-top: 25px;
+      transition: 0.3s;
+    }
+    .card:hover {
+      background-color: rgb(245, 230, 230);
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-t from-[#780909] to-[#810b0b] min-h-screen">
+
+   <!-- HEADER (opcional) -->
+  <header class="bg-[#780909] shadow-md py-4">
+    <h1 class="text-center text-white text-3xl font-bold">
+      Marciano Lisboa Advocacia
+    </h1>
+  </header>
+
+
+  <!-- CONTAINER PRINCIPAL -->
+<div class="max-w-4xl mx-auto mt-10 p-6 rounded-lg bg-white shadow-lg">
+
+  <h1 class="text-3xl font-bold text-center mb-8 text-[#780909]">
+    Artigos Publicados
+  </h1>
+
+  <ul id="lista" class="space-y-4">
+
+    <div class="flex flex-col h-full">
+
+      <!-- CARD -->
+      <div
+        class="card bg-white rounded-xl p-6 shadow-md border border-gray-200
+               transition-all duration-300 
+               hover:shadow-xl hover:-translate-y-1 hover:border-[#780909]/40">
+
+        
+
+    </div>
+
+  </ul>
+
+</div>
+
+
+   <!-- HEADER (opcional) -->
+  <header class="bg-[#780909] shadow-md py-4">
+    <h1 class="text-center text-white text-3xl font-bold">
+      Blog Jurídico • Marciano Lisboa Advocacia
+    </h1>
+  </header>
+
+
+  <script>
+    fetch("artigos.json")
+      .then(r => r.json())
+      .then(data => {
+        const lista = document.getElementById("lista");
+
+        if (!data || data.length === 0) {
+          lista.innerHTML = `
+            <p class="text-center text-gray-600 text-lg">
+              Nenhum artigo foi publicado ainda.
+            </p>`;
+          return;
+        }
+
+        data.forEach(a => {
+          const li = document.createElement("li");
+
+          li.innerHTML = `
+            <div class="card rounded-lg shadow p-5">
+              <a href="${a.arquivo}" class="text-2xl font-semibold text-[#780909] hover:underline">
+                ${a.titulo}
+              </a>
+              <p class="text-gray-600 mt-1">
+                Publicado em: <span class="font-medium">${a.data}</span>
+              </p>
+            </div>
+          `;
+
+          lista.appendChild(li);
+        });
+      });
+  </script>
+
+</body>
+</html>
+
 
   </main>
 
