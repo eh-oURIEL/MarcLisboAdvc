@@ -6,6 +6,7 @@
 
   <!-- TailwindCSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/2a1053f0dc.js" crossorigin="anonymous"></script>
 
   <style>
     .card {
@@ -26,18 +27,57 @@
 <body class="bg-gradient-to-b from-[#780909] to-[#810b0b] min-h-screen text-[#1a1a1a]">
 
   <!-- HEADER -->
-  <header class="bg-[#780909] shadow-md py-6">
-    <h1 class="text-center text-white text-3xl font-bold tracking-wide">
-      Marciano Lisboa Advocacia • Artigos
-    </h1>
-  </header>
+  <header class="bg-[#780909] p-2">
+          <div class="flex items-center justify-between"> 
+            <a href="../index.html"><img src="img/imgLogo/LogoMLAdvc.png" alt="" class="w-[150px] h-[150px] object-contain"></a>
+              <!-- Botão hamburguer -->
+              <button id="menu-btn" class="text-white md:hidden mr-5">
+                  <i class="fas fa-bars text-2xl"></i>
+              </button>
+              <!-- Navegação normal em telas médias+ -->
+              <nav class="hidden md:flex items-center space-x-8 mr-5 p-5">
+                <a href="https://wa.me/5561998321740?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20entrar%20em%20contato%20para%20saber%20mais%20sobre%20os%20servi%C3%A7os%20jur%C3%ADdicos%20oferecidos.%20Poderiam%20me%20orientar%20sobre%20como%20proceder%3F">
+                  <button class="flex items-center space-x-2 text-white border border-white rounded-full px-4 py-2 hover:bg-white hover:text-[#780909] transition duration-500">
+                      <i class="fa-brands fa-whatsapp"></i>
+                      <p>Fale Conosco</p>
+                  </button>
+              </a>
+              <a href="https://www.instagram.com/marcianolisboaadvocacia/" target="_blank">
+                <button class="flex items-center space-x-2 text-white border border-white rounded-full px-4 py-2 hover:bg-white hover:text-[#780909] transition duration-500">
+                    <i class="fa-brands fa-instagram"></i>
+                    <p>Instagram</p>
+                </button>
+            </a>
+                  <a href="../index.html" class="text-white">Home</a>
+                  <a href="index.html" class="text-white">Blog</a>
+              </nav>
+          </div>
+      
+          <!-- Menu mobile -->
+          <nav id="mobile-menu" class="hidden flex-col space-y-2 mt-4 md:hidden transition duration-1500 p-5">
+              <a href="../index.html" class="text-white">Home</a>
+              <a href="index.html" class="text-white block">Blog</a>
+              <a href="#atuacao" class="text-white block">Atuação</a>
+              <a href="https://wa.me/5561998321740?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20entrar%20em%20contato%20para%20saber%20mais%20sobre%20os%20servi%C3%A7os%20jur%C3%ADdicos%20oferecidos.%20Poderiam%20me%20orientar%20sobre%20como%20proceder%3F" class="text-white block">
+                  <button class="flex items-center space-x-2 text-white">
+                      <i class="fa-brands fa-whatsapp py-3"></i>
+                      <p>Whatsapp</p>
+                  </button>
+              </a>
+              <a href="https://www.instagram.com/marcianolisboaadvocacia/" target="_blank" class="text-white block">
+                <button class="flex items-center space-x-2 text-white">
+                    <i class="fa-brands fa-instagram"></i>
+                    <p>Instagram</p>
+                </button>
+            </a>
+          </nav>
+      </header>
 
   <!-- MINI-BANNER -->
   <div class="w-full bg-[#5f0707] py-6 shadow-lg">
-    <div class="max-w-5xl mx-auto px-4 flex items-center gap-5">
-      <img src="banner.jpg" class="w-20 h-20 object-cover rounded-lg shadow-md">
-      <div class="text-white">
-        <h2 class="text-xl font-bold">Conhecimento que transforma.</h2>
+    <div class="max-w-5xl mx-auto px-4 flex items-center justify-center">
+      <div class="text-white text-center">
+        <h2 class="text-xl font-bold my-3">Conhecimento que transforma.</h2>
         <p class="opacity-80 text-sm">
           Artigos, análises e orientações produzidas pelo escritório Marciano Lisboa Advocacia.
         </p>
@@ -100,15 +140,41 @@
 
     </section>
 
+     <section id="formulario" class="bg-gradient-to-t from-[#780909] to- to-[#810b0b] text-white py-14 flex flex-col items-center py-10 my-16 rounded-2xl shadow-xl">
+            <h1 class="text-3xl font-bold mb-4 text-white">Como podemos ajudar você hoje?</h1>
+            <p class="text-center max-w-md mb-6">
+              Queremos tirar suas dúvidas <br>
+              Nos descreva seu problema ou pergunta abaixo,  <br>
+              entraremos em contato o mais breve possível!
+            </p>
+            <form action="https://formsubmit.co/contato@marcianolisboaadvocacia.com.br" method="POST" class="w-full max-w-md space-y-4">
+              <input type="hidden" name="_subject" value="Nova mensagem do site!">
+              <input type="text" name="nome" placeholder="Nome" required class="w-full p-3 rounded-md border border-gray-300">
+              <input type="text" name="telefone" placeholder="DDD + Telefone" required class="w-full p-3 rounded-md border border-gray-300">
+              <input type="email" name="email" placeholder="E-mail" required class="w-full p-3 rounded-md border border-gray-300">
+              <input type="text" name="assunto" placeholder="Assunto" required class="w-full p-3 rounded-md border border-gray-300">
+              <textarea name="mensagem" placeholder="Mensagem" rows="4" required class="w-full p-3 rounded-md border border-gray-300"></textarea>
+              <button type="submit" class="w-full bg-gradient-to-r from-[#1a1f59] to-[#191b30] text-white p-3 rounded-md hover:bg-[#1f2235] transition">
+                Enviar mensagem
+              </button>
+            </form>
+            
+          </section>
+
   </main>
 
   <!-- FOOTER -->
-  <footer class="text-center text-white py-6 mt-10 opacity-90">
-    © 2025 - Marciano Lisboa Advocacia
-  </footer>
+   <footer>
+      <div class="bg-white h-5 w-full text-center pt-5 pb-20 text-[#780909] text-sm">
+            <p  class="">Marciano Lisboa Advocacia © 2025 - Todos os direitos reservados</p>
+            <p class="mt-4">Desenvolvido por: <a href="https://www.instagram.com/uriel_dsz">Uriel de Souza</a></p>
+          </div>
+   </footer>
 
   <!-- JS EXTERNO -->
   <script src="script.js"></script>
+  <script src="../script.js"></script>
+
 
 </body>
 </html>
