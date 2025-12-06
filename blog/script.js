@@ -1,9 +1,26 @@
+// ===============================
+// IMAGENS FIXAS POR CATEGORIA
+// ===============================
+const imagensCategorias = {
+  civil: "../img/imgCategoria/civil.png",
+  saude: "../img/imgCategoria/saude.png",
+  familia: "../img/imgCategoria/familia.png",
+  penal: "../img/imgCategoria/penal.png",
+  consumidor: "../img/imgCategoria/consumidor.png",
+  default: "../img/imgCategoria/default.png"
+};
+
+// ===============================
+// VARIÁVEIS DO SISTEMA
+// ===============================
 let artigos = [];
 let paginaAtual = 1;
 const itensPorPagina = 5;
 let categoriaSelecionada = "todas";
 
-// Carregar artigos
+// ===============================
+// CARREGAR ARTIGOS
+// ===============================
 fetch("artigos.json")
   .then(r => r.json())
   .then(data => {
@@ -11,24 +28,24 @@ fetch("artigos.json")
     renderizar();
   });
 
-// Filtro por categoria
+// ===============================
+// FILTRO DE CATEGORIAS
+// ===============================
 const botoesCategorias = document.querySelectorAll(".cat-btn");
 
 botoesCategorias.forEach(btn => {
   btn.addEventListener("click", () => {
 
-    // Define a categoria selecionada
     categoriaSelecionada = btn.dataset.cat;
     paginaAtual = 1;
 
-    // Remove estilos de "ativo" de todos os botões
+    // Remove estilos de ativo
     botoesCategorias.forEach(b => {
-      b.classList.remove("bg-[#780909]", "text-white", "bg-gray-200", "hover:bg-gray-300");
-      // garante que o estado visual volte ao padrão cinza
+      b.classList.remove("bg-[#780909]", "text-white");
       b.classList.add("bg-gray-200");
     });
 
-    // Ativa o botão clicado (fundo vermelho + texto branco)
+    // Ativa o botão clicado
     btn.classList.remove("bg-gray-200");
     btn.classList.add("bg-[#780909]", "text-white");
 
@@ -36,19 +53,20 @@ botoesCategorias.forEach(btn => {
   });
 });
 
-// Ativar o botão "Todas" na carga inicial
+// Ativar categoria "todas" ao iniciar
 const botTodas = document.querySelector('[data-cat="todas"]');
 if (botTodas) {
-  // limpa qualquer classe conflituosa e aplica o estado ativo
   botoesCategorias.forEach(b => {
     b.classList.remove("bg-[#780909]", "text-white");
     b.classList.add("bg-gray-200");
   });
-
   botTodas.classList.remove("bg-gray-200");
   botTodas.classList.add("bg-[#780909]", "text-white");
 }
 
+// ===============================
+// FUNÇÃO PARA RENDERIZAR ARTIGOS
+// ===============================
 function renderizar() {
   const lista = document.getElementById("lista");
   lista.innerHTML = "";
@@ -57,7 +75,6 @@ function renderizar() {
     ? artigos
     : artigos.filter(a => a.categoria === categoriaSelecionada);
 
-  // Paginação
   const inicio = (paginaAtual - 1) * itensPorPagina;
   const pagina = filtrados.slice(inicio, inicio + itensPorPagina);
 
@@ -65,12 +82,15 @@ function renderizar() {
     const card = document.createElement("div");
     card.className = "card rounded-xl p-6";
 
+    // Seleciona a imagem da categoria
+    const imgCategoria = imagensCategorias[a.categoria] || imagensCategorias.default;
+
     card.innerHTML = `
       <div class="flex gap-4">
 
-        <!-- THUMBNAIL -->
-        <img src="${a.thumbnail || 'thumb-default.jpg'}"
-             class="w-24 h-24 object-cover rounded-lg shadow">
+        <!-- IMAGEM REPRESENTATIVA DA CATEGORIA -->
+        <img src="${imgCategoria}"
+             class="w-24 h-24 object-contain rounded-lg shadow">
 
         <div class="flex flex-col">
 
@@ -96,6 +116,9 @@ function renderizar() {
   });
 }
 
+// ===============================
+// PAGINAÇÃO
+// ===============================
 document.getElementById("prev").onclick = () => {
   if (paginaAtual > 1) {
     paginaAtual--;
@@ -108,6 +131,9 @@ document.getElementById("next").onclick = () => {
   renderizar();
 };
 
+// ===============================
+// FORMATAÇÃO DE DATAS
+// ===============================
 function formatarData(dateStr) {
   const data = new Date(dateStr);
   return data.toLocaleDateString("pt-BR", {
