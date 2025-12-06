@@ -1,23 +1,4 @@
 [
-  {
-    "titulo": "Entenda seus direitos no atendimento hospitalar",
-    "data": "2025-01-12",
-    "categoria": "saude",
-    "arquivo": "artigos/artigo1.html",
-    "thumbnail": "imgs/artigo1.jpg"
-  },
-  {
-    "titulo": "Pensão alimentícia: como funciona de verdade",
-    "data": "2025-01-20",
-    "categoria": "familia",
-    "arquivo": "artigos/artigo2.html",
-    "thumbnail": "imgs/artigo2.jpg"
-  },
-  {
-    "titulo": "Ações de consumidor: passos iniciais",
-    "data": "2025-02-01",
-    "categoria": "consumidor",
-    "arquivo": "artigos/artigo3.html",
-    "thumbnail": "imgs/artigo3.jpg"
-  }
+  
 ]
+
