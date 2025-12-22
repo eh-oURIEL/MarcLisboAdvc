@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Evita conflito com arquivos reais
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# URL bonita do blog
+RewriteRule ^blog/([a-z0-9-]+)$ artigo.php?slug=$1 [L,QSA]

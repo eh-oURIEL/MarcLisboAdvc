@@ -1,0 +1,19 @@
+/* src/styles.css */
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card{
+    background-color: rgb(245, 245, 245);
+    margin-top: 25px;
+}
+
+.card:hover{
+    background-color: rgb(245, 230, 230);
+}
+
+a[href*="elfsight.com/google-reviews-widget"] {
+  display: none !important;
+}

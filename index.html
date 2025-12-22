@@ -5,16 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <script src="https://kit.fontawesome.com/2a1053f0dc.js" crossorigin="anonymous"></script>
-        <link rel="icon" type="image/png" href="img/imgLogo/logoRodape.png">
-
 
         <link rel="icon" type="image/png" href="img/imgLogo/logoRodape.png">
 
         <link rel="stylesheet" href="styles.css">        
         <title>Marciano Lisboa - Advocacia</title>
       </head>
-      <body class="bg-pink-25 text-[#191b30]">
-        <div class="flex justify-center md:justify-between p-3 bg-[#a67a03] text-white text-sm">
+      <body class="bg-pink-25 text-[#000000]">
+        <div class="flex justify-center md:justify-between p-3 bg-gradient-to-r from-yellow-700 to-yellow-900 text-white text-sm">
           <div class="flex items-center md:mx-10">
               <a href="tel:+5561998321750">
                 <i class="fa-solid fa-phone mx-2"></i>
@@ -50,7 +48,7 @@
             </a>    
                   <a href="#sobre" class="text-white">Sobre</a>
                   <a href="#atuacao" class="text-white">Atuação</a>
-                  <a href="blog/index.html" class="text-white">Blog</a>
+                  <a href="blog.php" class="text-white">Blog</a>
               </nav>
           </div>
       
@@ -59,7 +57,7 @@
               <a href="#sobre" class="text-white block">Sobre</a>
               <a href="#atuacao" class="text-white block">Atuação</a>
               <a href="#avaliacoes" class="text-white block">Avaliações</a>
-              <a href="blog/index.html" class="text-white block">Blog</a>
+              <a href="blog.php" class="text-white block">Blog</a>
               <a href="https://wa.me/5561998321740?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20entrar%20em%20contato%20para%20saber%20mais%20sobre%20os%20servi%C3%A7os%20jur%C3%ADdicos%20oferecidos.%20Poderiam%20me%20orientar%20sobre%20como%20proceder%3F" class="text-white block">
                   <button class="flex items-center space-x-2 text-white">
                       <i class="fa-brands fa-whatsapp py-3"></i>
@@ -127,7 +125,7 @@
                 </div>
                 <div onclick="toggleCard(this)" class="card w-full sm:w-[45%] lg:w-[30%] rounded shadow-lg p-4 flex flex-col items-center justify-center mx-auto h-70 cursor-pointer transition duration-1000">
                     <img src="img/imgCards/group.svg" alt="" class="w-20 h-20 mb-4 card-img">
-                    <p class="font-semibold card-title">Direito Trabalhista, Previdenciária, Tributária, Administrativa e Empresarial:</p>
+                    <p class="font-semibold card-title">Direito Trabalhista, Previdenciário, Tributário, Administrativo e Empresarial</p>
                     <p class="hidden card-desc text-center">Atuação jurídica em parceria entre profissionais das áreas Trabalhista, Previdenciária, Tributária, Administrativa e Empresarial, oferecendo análises completas e soluções seguras — do suporte em relações de trabalho e benefícios ao planejamento fiscal, questões com órgãos públicos e estruturação de negócios — sempre com respostas eficientes e alinhadas à legislação.</p>
                 </div>
             </div> 
@@ -137,7 +135,7 @@
             <h1 class="text-3xl font-semibold mb-6">Quem somos</h1>
             <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between">
                 <div class="w-full lg:w-1/3 flex  mb-8 lg:mb-0 ">
-                <img src="img/imgDireito/img_somos.png" alt="" class="w-100 h-auto">
+                <img src="img/imgDireito/img_quem.png" alt="" class="w-100 h-auto">
                 </div>
                 <div class="w-full lg:w-2/3">
                 <div class="text-left">
@@ -213,7 +211,7 @@
               <input type="email" name="email" placeholder="E-mail" required class="w-full p-3 rounded-md border border-gray-300">
               <input type="text" name="assunto" placeholder="Assunto" required class="w-full p-3 rounded-md border border-gray-300">
               <textarea name="mensagem" placeholder="Mensagem" rows="4" required class="w-full p-3 rounded-md border border-gray-300"></textarea>
-              <button type="submit" class="w-full bg-gradient-to-r from-[#a67a03] to-[#644805] text-white p-3 rounded-md hover:bg-[#1f2235] transition">
+              <button type="submit" class="w-full bg-gradient-to-r from-yellow-700 to-yellow-900 text-white p-3 rounded-md hover:bg-[#1f2235] transition">
                 Enviar mensagem
               </button>
             </form>
